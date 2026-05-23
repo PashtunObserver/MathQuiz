@@ -1,12 +1,3 @@
-const mathNova_jsonUrl =
-"https://cdn.jsdelivr.net/gh/PashtunObserver/MathQuiz@main/math-quiz.json";
-
-const mathNova_quizCategory =
-"mathNova_mathQuizSet";
-
-const mathNova_customTitle =
-"Math Master Quiz";
-
 /**
  * ============================================
  * MATH NOVA QUIZ APP - JAVASCRIPT
