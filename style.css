@@ -1,0 +1,738 @@
+/* ============================================
+   MATH NOVA QUIZ APP - STYLESHEET
+   Unique prefix: mathNova_ / mqz_
+   Version: 1.0
+   ============================================ */
+
+/* CSS Variables for easy theming */
+:root {
+  --mqz-primary: #6366f1;
+  --mqz-primaryDark: #4f46e5;
+  --mqz-primaryLight: #818cf8;
+  --mqz-secondary: #10b981;
+  --mqz-danger: #ef4444;
+  --mqz-warning: #f59e0b;
+  --mqz-bg: #f8fafc;
+  --mqz-cardBg: #ffffff;
+  --mqz-text: #1e293b;
+  --mqz-textLight: #64748b;
+  --mqz-border: #e2e8f0;
+  --mqz-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --mqz-shadowLg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --mqz-radius: 16px;
+  --mqz-radiusSm: 8px;
+  --mqz-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   MAIN CONTAINER
+   Full width, zero margins for Blogger
+   ============================================ */
+#mathNova_container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--mqz-bg);
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#mathNova_container * {
+  box-sizing: border-box;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.mathNova_hidden {
+  display: none !important;
+}
+
+.mathNova_fadeIn {
+  animation: mathNova_fadeIn 0.5s ease-out forwards;
+}
+
+.mathNova_slideUp {
+  animation: mathNova_slideUp 0.5s ease-out forwards;
+}
+
+.mathNova_bounce {
+  animation: mathNova_bounce 0.6s ease-out;
+}
+
+/* ============================================
+   LOADING SCREEN
+   ============================================ */
+#mathNova_loadingScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 40px 20px;
+}
+
+.mathNova_spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--mqz-border);
+  border-top-color: var(--mqz-primary);
+  border-radius: 50%;
+  animation: mathNova_spin 1s linear infinite;
+}
+
+.mathNova_loadingText {
+  margin-top: 20px;
+  color: var(--mqz-textLight);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ============================================
+   START SCREEN
+   ============================================ */
+#mathNova_startScreen {
+  padding: 20px;
+  animation: mathNova_fadeIn 0.6s ease-out;
+}
+
+.mathNova_startCard {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--mqz-cardBg);
+  border-radius: var(--mqz-radius);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--mqz-shadowLg);
+  border: 1px solid var(--mqz-border);
+}
+
+.mathNova_iconWrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--mqz-primaryLight), var(--mqz-primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.mathNova_rocketIcon {
+  font-size: 2.5rem;
+  animation: mathNova_float 3s ease-in-out infinite;
+}
+
+#mathNova_quizTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--mqz-text);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.mathNova_subtitle {
+  color: var(--mqz-textLight);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Stats preview grid */
+.mathNova_statsPreview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.mathNova_statBox {
+  background: var(--mqz-bg);
+  padding: 15px 10px;
+  border-radius: var(--mqz-radiusSm);
+  border: 2px solid var(--mqz-border);
+}
+
+.mathNova_statNum {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--mqz-primary);
+  line-height: 1;
+}
+
+.mathNova_statLabel {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--mqz-textLight);
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* ============================================
+   QUIZ SCREEN
+   ============================================ */
+#mathNova_quizScreen {
+  padding: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: mathNova_fadeIn 0.4s ease-out;
+}
+
+/* Progress bar section */
+.mathNova_progressWrap {
+  margin-bottom: 20px;
+}
+
+.mathNova_progressInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--mqz-textLight);
+}
+
+#mathNova_scoreDisplay {
+  color: var(--mqz-primary);
+  font-weight: 700;
+}
+
+.mathNova_progressTrack {
+  width: 100%;
+  height: 8px;
+  background: var(--mqz-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#mathNova_progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--mqz-primary), var(--mqz-primaryLight));
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 5%;
+}
+
+/* Question card */
+.mathNova_card {
+  background: var(--mqz-cardBg);
+  border-radius: var(--mqz-radius);
+  padding: 25px;
+  box-shadow: var(--mqz-shadow);
+  border: 1px solid var(--mqz-border);
+  margin-bottom: 20px;
+  transition: var(--mqz-transition);
+}
+
+.mathNova_categoryBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--mqz-primary);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+#mathNova_questionText {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--mqz-text);
+  margin: 0 0 25px;
+  line-height: 1.4;
+}
+
+/* Options grid */
+.mathNova_optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.mathNova_optionBtn {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--mqz-bg);
+  border: 2px solid var(--mqz-border);
+  border-radius: var(--mqz-radiusSm);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mqz-text);
+  cursor: pointer;
+  transition: var(--mqz-transition);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mathNova_optionBtn:hover:not(:disabled) {
+  border-color: var(--mqz-primary);
+  background: rgba(99, 102, 241, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.mathNova_optionBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Option letter indicator */
+.mathNova_optionBtn::before {
+  content: attr(data-option);
+  width: 32px;
+  height: 32px;
+  background: var(--mqz-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: var(--mqz-transition);
+}
+
+/* Answer states */
+.mathNova_optionCorrect {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: var(--mqz-secondary) !important;
+  color: #065f46 !important;
+}
+
+.mathNova_optionCorrect::before {
+  background: var(--mqz-secondary) !important;
+}
+
+.mathNova_optionWrong {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: var(--mqz-danger) !important;
+  color: #991b1b !important;
+}
+
+.mathNova_optionWrong::before {
+  background: var(--mqz-danger) !important;
+}
+
+.mathNova_optionSelected {
+  border-color: var(--mqz-primary) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Feedback area */
+.mathNova_feedbackArea {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: var(--mqz-radiusSm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: mathNova_slideUp 0.3s ease-out;
+}
+
+.mathNova_feedbackCorrect {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--mqz-secondary);
+}
+
+.mathNova_feedbackWrong {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--mqz-danger);
+}
+
+.mathNova_feedbackIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mathNova_feedbackText {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Navigation */
+.mathNova_navWrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+/* ============================================
+   RESULTS SCREEN
+   ============================================ */
+#mathNova_resultScreen {
+  padding: 20px;
+  animation: mathNova_fadeIn 0.6s ease-out;
+}
+
+.mathNova_resultCard {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--mqz-cardBg);
+  border-radius: var(--mqz-radius);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--mqz-shadowLg);
+  border: 1px solid var(--mqz-border);
+}
+
+.mathNova_trophyWrap {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+  animation: mathNova_bounce 0.6s ease-out;
+}
+
+.mathNova_trophyIcon {
+  font-size: 3rem;
+}
+
+.mathNova_resultTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--mqz-text);
+  margin: 0 0 20px;
+}
+
+/* Score circle */
+.mathNova_scoreCircle {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--mqz-primaryLight), var(--mqz-primary));
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+#mathNova_finalScore {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.mathNova_finalScoreLabel {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+.mathNova_resultMessage {
+  font-size: 1.1rem;
+  color: var(--mqz-textLight);
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* Breakdown stats */
+.mathNova_breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+  background: var(--mqz-bg);
+  padding: 20px;
+  border-radius: var(--mqz-radiusSm);
+}
+
+.mathNova_breakItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.mathNova_breakLabel {
+  font-size: 0.8rem;
+  color: var(--mqz-textLight);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mathNova_breakValue {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.mathNova_breakCorrect {
+  color: var(--mqz-secondary);
+}
+
+.mathNova_breakWrong {
+  color: var(--mqz-danger);
+}
+
+/* ============================================
+   ERROR SCREEN
+   ============================================ */
+#mathNova_errorScreen {
+  padding: 20px;
+  animation: mathNova_fadeIn 0.4s ease-out;
+}
+
+.mathNova_errorCard {
+  max-width: 400px;
+  margin: 0 auto;
+  background: var(--mqz-cardBg);
+  border-radius: var(--mqz-radius);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: var(--mqz-shadow);
+  border: 1px solid var(--mqz-border);
+}
+
+.mathNova_errorIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.mathNova_errorTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--mqz-text);
+  margin: 0 0 10px;
+}
+
+.mathNova_errorText {
+  color: var(--mqz-textLight);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.mathNova_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--mqz-radiusSm);
+  cursor: pointer;
+  transition: var(--mqz-transition);
+  text-transform: none;
+  letter-spacing: 0.3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mathNova_btnPrimary {
+  background: linear-gradient(135deg, var(--mqz-primary), var(--mqz-primaryDark));
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.mathNova_btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.mathNova_btnPrimary:active {
+  transform: translateY(0);
+}
+
+.mathNova_btnSecondary {
+  background: var(--mqz-bg);
+  color: var(--mqz-text);
+  border: 2px solid var(--mqz-border);
+}
+
+.mathNova_btnSecondary:hover {
+  border-color: var(--mqz-primary);
+  color: var(--mqz-primary);
+}
+
+.mathNova_btnArrow {
+  transition: transform 0.3s ease;
+}
+
+.mathNova_btn:hover .mathNova_btnArrow {
+  transform: translateX(4px);
+}
+
+.mathNova_btnIcon {
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes mathNova_spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes mathNova_fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mathNova_slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mathNova_bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes mathNova_float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes mathNova_shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Shake animation for wrong answers */
+.mathNova_shake {
+  animation: mathNova_shake 0.4s ease-in-out;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  #mathNova_quizScreen {
+    padding: 30px;
+  }
+  
+  .mathNova_optionsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #mathNova_questionText {
+    font-size: 1.5rem;
+  }
+  
+  .mathNova_startCard,
+  .mathNova_resultCard {
+    padding: 50px 40px;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  #mathNova_container {
+    padding: 20px 0;
+  }
+  
+  .mathNova_card {
+    padding: 35px;
+  }
+  
+  .mathNova_optionBtn {
+    padding: 18px 24px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  #mathNova_quizTitle {
+    font-size: 1.5rem;
+  }
+  
+  .mathNova_statsPreview {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .mathNova_statBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+  
+  .mathNova_statNum {
+    font-size: 1.3rem;
+  }
+  
+  .mathNova_breakdown {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .mathNova_breakItem {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .mathNova_scoreCircle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  #mathNova_finalScore {
+    font-size: 2.5rem;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.mathNova_btn:focus-visible,
+.mathNova_optionBtn:focus-visible {
+  outline: 3px solid var(--mqz-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mathNova_optionBtn {
+    border-width: 3px;
+  }
+  
+  .mathNova_card {
+    border-width: 2px;
+  }
+}

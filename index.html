@@ -1,0 +1,163 @@
+<!-- ============================================
+     MATH NOVA QUIZ APP - BLOGGER EMBED CODE
+     Paste this entire div into your Blogger 
+     HTML/JavaScript widget or post editor
+     ============================================ -->
+
+<div id="mathNova_container">
+  
+  <!-- Loading Screen -->
+  <div id="mathNova_loadingScreen">
+    <div class="mathNova_spinner"></div>
+    <p class="mathNova_loadingText">Loading Math Quiz...</p>
+  </div>
+
+  <!-- Start Screen -->
+  <div id="mathNova_startScreen" class="mathNova_hidden">
+    <div class="mathNova_startCard">
+      <div class="mathNova_iconWrap">
+        <span class="mathNova_rocketIcon">🚀</span>
+      </div>
+      <h1 id="mathNova_quizTitle">Math Nova Challenge</h1>
+      <p class="mathNova_subtitle">Test your math skills across 7 categories!</p>
+      
+      <div class="mathNova_statsPreview">
+        <div class="mathNova_statBox">
+          <span class="mathNova_statNum">20</span>
+          <span class="mathNova_statLabel">Questions</span>
+        </div>
+        <div class="mathNova_statBox">
+          <span class="mathNova_statNum">7</span>
+          <span class="mathNova_statLabel">Categories</span>
+        </div>
+        <div class="mathNova_statBox">
+          <span class="mathNova_statNum">∞</span>
+          <span class="mathNova_statLabel">Practice</span>
+        </div>
+      </div>
+
+      <button id="mathNova_startBtn" class="mathNova_btn mathNova_btnPrimary">
+        <span>Start Quiz</span>
+        <span class="mathNova_btnArrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div id="mathNova_quizScreen" class="mathNova_hidden">
+    
+    <!-- Progress Bar -->
+    <div class="mathNova_progressWrap">
+      <div class="mathNova_progressInfo">
+        <span id="mathNova_questionCounter">Question 1 of 20</span>
+        <span id="mathNova_scoreDisplay">Score: 0</span>
+      </div>
+      <div class="mathNova_progressTrack">
+        <div id="mathNova_progressBar" class="mathNova_progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Question Card -->
+    <div id="mathNova_questionCard" class="mathNova_card">
+      <div class="mathNova_categoryBadge" id="mathNova_categoryBadge">Arithmetic</div>
+      <h2 id="mathNova_questionText" class="mathNova_questionText">Loading question...</h2>
+      
+      <div id="mathNova_optionsGrid" class="mathNova_optionsGrid">
+        <!-- Options injected by JS -->
+      </div>
+
+      <div id="mathNova_feedbackArea" class="mathNova_feedbackArea mathNova_hidden">
+        <div id="mathNova_feedbackIcon" class="mathNova_feedbackIcon"></div>
+        <p id="mathNova_feedbackText" class="mathNova_feedbackText"></p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="mathNova_navWrap">
+      <button id="mathNova_nextBtn" class="mathNova_btn mathNova_btnPrimary mathNova_hidden">
+        Next Question
+        <span class="mathNova_btnArrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="mathNova_resultScreen" class="mathNova_hidden">
+    <div class="mathNova_resultCard">
+      <div class="mathNova_trophyWrap">
+        <span class="mathNova_trophyIcon">🏆</span>
+      </div>
+      
+      <h2 class="mathNova_resultTitle">Quiz Complete!</h2>
+      
+      <div class="mathNova_scoreCircle">
+        <span id="mathNova_finalScore" class="mathNova_finalScoreNum">0</span>
+        <span class="mathNova_finalScoreLabel">out of 20</span>
+      </div>
+
+      <div id="mathNova_resultMessage" class="mathNova_resultMessage">
+        Great effort! Keep practicing!
+      </div>
+
+      <div class="mathNova_breakdown">
+        <div class="mathNova_breakItem">
+          <span class="mathNova_breakLabel">Correct</span>
+          <span id="mathNova_correctCount" class="mathNova_breakValue mathNova_breakCorrect">0</span>
+        </div>
+        <div class="mathNova_breakItem">
+          <span class="mathNova_breakLabel">Wrong</span>
+          <span id="mathNova_wrongCount" class="mathNova_breakValue mathNova_breakWrong">0</span>
+        </div>
+        <div class="mathNova_breakItem">
+          <span class="mathNova_breakLabel">Percentage</span>
+          <span id="mathNova_percentScore" class="mathNova_breakValue">0%</span>
+        </div>
+      </div>
+
+      <button id="mathNova_restartBtn" class="mathNova_btn mathNova_btnPrimary">
+        <span class="mathNova_btnIcon">↻</span>
+        <span>Restart Quiz</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Error Screen -->
+  <div id="mathNova_errorScreen" class="mathNova_hidden">
+    <div class="mathNova_errorCard">
+      <span class="mathNova_errorIcon">⚠️</span>
+      <h3 class="mathNova_errorTitle">Oops! Something went wrong</h3>
+      <p id="mathNova_errorMessage" class="mathNova_errorText">Failed to load quiz data.</p>
+      <button id="mathNova_retryBtn" class="mathNova_btn mathNova_btnSecondary">
+        Try Again
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================
+     EXTERNAL RESOURCE LINKS
+     Replace these with your GitHub CDN links
+     ============================================ -->
+
+<!-- CSS Link - Place in Blogger <head> or before the div -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPO@main/mathnova-quiz.css">
+
+<!-- JavaScript Link - Place at end of Blogger post or before </body> -->
+<script src="https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPO@main/mathnova-quiz.js"></script>
+
+<!-- ============================================
+     QUIZ CONFIGURATION
+     Customize these values as needed
+     ============================================ -->
+<script>
+  // Unique identifier for this quiz category
+  // Change this when adding new quiz categories
+  const mathNova_quizCategory = "mathNova_mathQuizSet";
+  
+  // JSON data URL - replace with your jsDelivr CDN link
+  const mathNova_jsonUrl = "https://cdn.jsdelivr.net/gh/YOUR_USERNAME/YOUR_REPO@main/mathnova-data.json";
+  
+  // Optional: Change quiz title
+  const mathNova_customTitle = "Math Nova Challenge";
+</script>

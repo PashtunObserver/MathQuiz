@@ -1,0 +1,184 @@
+{
+  "mathNova_mathQuizSet": [
+    {
+      "mqz_question": "What is 15 × 8?",
+      "mqz_optionA": "110",
+      "mqz_optionB": "120",
+      "mqz_optionC": "130",
+      "mqz_optionD": "140",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Arithmetic"
+    },
+    {
+      "mqz_question": "Solve for x: 3x + 7 = 22",
+      "mqz_optionA": "3",
+      "mqz_optionB": "4",
+      "mqz_optionC": "5",
+      "mqz_optionD": "6",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Algebra"
+    },
+    {
+      "mqz_question": "What is 45% of 200?",
+      "mqz_optionA": "80",
+      "mqz_optionB": "85",
+      "mqz_optionC": "90",
+      "mqz_optionD": "95",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Percentages"
+    },
+    {
+      "mqz_question": "What is the area of a rectangle with length 12 cm and width 8 cm?",
+      "mqz_optionA": "96 cm²",
+      "mqz_optionB": "100 cm²",
+      "mqz_optionC": "108 cm²",
+      "mqz_optionD": "120 cm²",
+      "mqz_correctAnswer": "A",
+      "mqz_category": "Geometry"
+    },
+    {
+      "mqz_question": "Which fraction is equivalent to 3/4?",
+      "mqz_optionA": "6/10",
+      "mqz_optionB": "9/12",
+      "mqz_optionC": "8/12",
+      "mqz_optionD": "5/8",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Fractions"
+    },
+    {
+      "mqz_question": "Solve: 2(x - 3) = 14",
+      "mqz_optionA": "8",
+      "mqz_optionB": "9",
+      "mqz_optionC": "10",
+      "mqz_optionD": "11",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Simple Equations"
+    },
+    {
+      "mqz_question": "What is 7² + 8²?",
+      "mqz_optionA": "105",
+      "mqz_optionB": "110",
+      "mqz_optionC": "113",
+      "mqz_optionD": "120",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Mental Math"
+    },
+    {
+      "mqz_question": "What is 1/4 + 2/5?",
+      "mqz_optionA": "11/20",
+      "mqz_optionB": "3/9",
+      "mqz_optionC": "13/20",
+      "mqz_optionD": "7/20",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Fractions"
+    },
+    {
+      "mqz_question": "A shirt costs $40 and is on sale for 25% off. What is the sale price?",
+      "mqz_optionA": "$28",
+      "mqz_optionB": "$30",
+      "mqz_optionC": "$32",
+      "mqz_optionD": "$35",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Percentages"
+    },
+    {
+      "mqz_question": "What is the perimeter of a square with side length 9 cm?",
+      "mqz_optionA": "27 cm",
+      "mqz_optionB": "36 cm",
+      "mqz_optionC": "45 cm",
+      "mqz_optionD": "81 cm",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Geometry"
+    },
+    {
+      "mqz_question": "Calculate: 125 ÷ 5 × 3",
+      "mqz_optionA": "65",
+      "mqz_optionB": "70",
+      "mqz_optionC": "75",
+      "mqz_optionD": "80",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Arithmetic"
+    },
+    {
+      "mqz_question": "If 5x - 3 = 2x + 9, what is x?",
+      "mqz_optionA": "2",
+      "mqz_optionB": "3",
+      "mqz_optionC": "4",
+      "mqz_optionD": "5",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Algebra"
+    },
+    {
+      "mqz_question": "What is 20% of 150?",
+      "mqz_optionA": "25",
+      "mqz_optionB": "30",
+      "mqz_optionC": "35",
+      "mqz_optionD": "40",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Percentages"
+    },
+    {
+      "mqz_question": "What is 3/8 as a decimal?",
+      "mqz_optionA": "0.25",
+      "mqz_optionB": "0.375",
+      "mqz_optionC": "0.4",
+      "mqz_optionD": "0.5",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Fractions"
+    },
+    {
+      "mqz_question": "Solve: x/4 + 5 = 12",
+      "mqz_optionA": "24",
+      "mqz_optionB": "28",
+      "mqz_optionC": "32",
+      "mqz_optionD": "36",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Simple Equations"
+    },
+    {
+      "mqz_question": "What is the volume of a cube with edge length 4 cm?",
+      "mqz_optionA": "48 cm³",
+      "mqz_optionB": "56 cm³",
+      "mqz_optionC": "64 cm³",
+      "mqz_optionD": "72 cm³",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Geometry"
+    },
+    {
+      "mqz_question": "Quick! What is 99 + 47?",
+      "mqz_optionA": "144",
+      "mqz_optionB": "145",
+      "mqz_optionC": "146",
+      "mqz_optionD": "147",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Mental Math"
+    },
+    {
+      "mqz_question": "Simplify: 24/36",
+      "mqz_optionA": "1/2",
+      "mqz_optionB": "2/3",
+      "mqz_optionC": "3/4",
+      "mqz_optionD": "4/5",
+      "mqz_correctAnswer": "B",
+      "mqz_category": "Fractions"
+    },
+    {
+      "mqz_question": "What is 12.5% of 80?",
+      "mqz_optionA": "8",
+      "mqz_optionB": "9",
+      "mqz_optionC": "10",
+      "mqz_optionD": "11",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Percentages"
+    },
+    {
+      "mqz_question": "Calculate: (15 + 25) × (8 - 3)",
+      "mqz_optionA": "180",
+      "mqz_optionB": "190",
+      "mqz_optionC": "200",
+      "mqz_optionD": "210",
+      "mqz_correctAnswer": "C",
+      "mqz_category": "Arithmetic"
+    }
+  ]
+}
